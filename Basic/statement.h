@@ -15,6 +15,7 @@
 #include "evalstate.h"
 #include "exp.h"
 #include "../StanfordCPPLib/tokenscanner.h"
+#include "program.h"
 /*
  * Class: Statement
  * ----------------
@@ -24,7 +25,7 @@
  * for each of the statement and command types required for the
  * BASIC interpreter.
  */
-
+class Program;
 class Statement {
 
 public:
@@ -37,6 +38,7 @@ public:
  */
 
     Statement();
+
 
 /*
  * Destructor: ~Statement
@@ -60,12 +62,96 @@ public:
  * controlling the operation of the interpreter.
  */
 
-    virtual void execute(EvalState &state) = 0;
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter) = 0;//抽象函数
+};
+
+Statement *parseSta(TokenScanner &scanner,string s);
+
+class Remsta : public Statement {
+public:
+    Remsta(string s){
+        s0 = s;
+    }
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+private:
+    string s0;
+};
+
+class Letsta: public Statement {
+public:
+    Letsta(string s){
+        s0 = s;
+    };
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+private:
+     string s0;
+};
+
+class Printsta : public Statement {
+public:
+    Printsta(string s){
+        s0 = s;
+    }
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+
+private:
+    string s0;
+};
+
+class Inputsta : public Statement {
+public:
+    Inputsta(string s){
+        s0 = s;
+    }
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+
+private:
+    string s0;
+};
+
+class Endsta : public Statement {
+public:
+
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+};
+
+class Gotosta : public Statement {
+public:
+    Gotosta(string s){
+        s0 = s;
+    }
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+private:
+    string s0;
 
 };
 
-Statement *parseSta(TokenScanner &scanner);
+class Ifsta : public Statement {
+public:
+    Ifsta(string s){
+        s0 = s;
+    }
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+private:
+    string s0;
+};
 
+class Quitsta:public Statement{
+public:
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+};
+
+class Liststa:public Statement{
+public:
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+};
+
+class Clearsta:public Statement{
+public:
+    virtual void execute(EvalState &state,Program &program,map<int, Statement *>::iterator &iter);
+};
+
+bool checkcon(string s,EvalState &state);
 /*
  * The remainder of this file must consists of subclass
  * definitions for the individual statement forms.  Each of

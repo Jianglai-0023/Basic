@@ -21,7 +21,7 @@
 enum ExpressionType {
     CONSTANT, IDENTIFIER, COMPOUND
 };
-//bool divzero = false;
+
 /*
  * Class: Expression
  * -----------------

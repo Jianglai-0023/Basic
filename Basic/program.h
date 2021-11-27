@@ -25,7 +25,8 @@ using namespace std;
  * 2. The parsed representation of that statement, which is a
  *    pointer to a Statement.
  */
-
+bool checkcon(string s,EvalState &state);
+class Statement;
 class Program {
 
 public:
@@ -50,9 +51,9 @@ public:
 
     bool hasline(int linenumber);
     void List();
-    map<int, string>::iterator getStart();
-    map<int, string>::iterator getEnd();
-    map<int, string>::iterator goTo(const int &lineNumber);
+    map<int, Statement *>::iterator getStart();
+    map<int, Statement *>::iterator getEnd();
+    map<int, Statement *>::iterator goTo(const int &lineNumber);
 
 /*
  * Method: clear
@@ -147,6 +148,7 @@ public:
 
 map<int, string> Promstr;
 map<int, string>Promsta;
+map<int, Statement *> Pstate;
 };
 
 #endif

@@ -6,28 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/Basic.cpp
-cctype
--
-iostream
--
-string
--
-exp.h
-/Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/exp.h
-parser.h
-/Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/parser.h
-program.h
-/Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/program.h
-../StanfordCPPLib/error.h
-/Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/error.h
-../StanfordCPPLib/tokenscanner.h
-/Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/tokenscanner.h
-../StanfordCPPLib/simpio.h
-/Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/simpio.h
-../StanfordCPPLib/strlib.h
-/Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/strlib.h
-
 /Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/evalstate.h
 string
 -
@@ -52,6 +30,16 @@ string
 statement.h
 /Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/statement.h
 
+/Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/statement.cpp
+string
+-
+statement.h
+/Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/statement.h
+parser.h
+/Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/parser.h
+program.h
+/Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/program.h
+
 /Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/statement.h
 evalstate.h
 /Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/evalstate.h
@@ -59,14 +47,8 @@ exp.h
 /Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/exp.h
 ../StanfordCPPLib/tokenscanner.h
 /Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/tokenscanner.h
-
-/Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/error.h
-string
--
-exception
--
-private/main.h
-/Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/private/main.h
+program.h
+/Users/jianglai/Desktop/BASIC-Interpreter-main/Basic/program.h
 
 /Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/foreach.h
 iterator
@@ -92,13 +74,7 @@ foreach.h
 stack.h
 /Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/stack.h
 
-/Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/private/main.h
-
 /Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/private/tokenpatch.h
-
-/Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/simpio.h
-string
--
 
 /Users/jianglai/Desktop/BASIC-Interpreter-main/StanfordCPPLib/stack.h
 vector.h
